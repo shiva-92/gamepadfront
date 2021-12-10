@@ -21,23 +21,12 @@ const Review = ({ token }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post(
-      "http://localhost:3000/reviewpost", //envoyer commentaires en base de donnéee
-      //tu lui envoi objet dans parametre
-      {
-        reviewtitle: title, //tu vas mettre dans champ email
-        reviewtext: text, //tu vas mettre dans champ hash
-        tokentest: token,
-        idnum: id, //marqueur
-        //sauvegarder ces infos dans base de donnée tu fais passer par objet
-      }
-    );
-    //qu'est ce que tu fais avec response recupere ce qui a été pondu
-
-    //fonction qui met valeur à l'interieur de cookie
-
-    //execute l'interieur de setUser avec cette valeur affecté à variable param
-    //execute interieur de fonction setUser recu dans parametre avec response.data.token en argument
+    const response = await axios.post("http://localhost:3000/reviewpost", {
+      reviewtitle: title,
+      reviewtext: text,
+      tokentest: token,
+      idnum: id,
+    });
     console.log(response.data);
     navigate("/");
   };
@@ -46,7 +35,6 @@ const Review = ({ token }) => {
     <>
       <div className="containerform">
         <form onSubmit={handleSubmit}>
-          {/* //au clic sur le bouton dans le form */}
           <div>Title review</div>
           <input
             onChange={handletitlereview}

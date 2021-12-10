@@ -26,11 +26,7 @@ const Header = ({ token, setUser }) => {
       <div className="header">
         <img src={logogamepad} onClick={handleimage} />
         <div class="partright">
-          <button
-            onClick={handleCollection} //au clic on décide d'executer cette fonction
-          >
-            MYCOLLECTION
-          </button>
+          <button onClick={handleCollection}>MYCOLLECTION</button>
 
           {token ? (
             <>
@@ -44,8 +40,6 @@ const Header = ({ token, setUser }) => {
             </>
           )}
         </div>
-
-        {/* //execute interieur de la fonction avec argument vide il refuse*/}
       </div>
     </>
   );
