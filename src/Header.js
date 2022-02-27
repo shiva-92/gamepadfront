@@ -24,7 +24,14 @@ const Header = ({ token, setUser }) => {
   return (
     <>
       <div className="header">
-        <img src={logogamepad} onClick={handleimage} />
+        <button
+          className="landingpage"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <img src={logogamepad} onClick={handleimage} />
+        </button>
         <div class="partright">
           <button onClick={handleCollection}>MYCOLLECTION</button>
 

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Games = ({ token }) => {
   const [data, setData] = useState("");
@@ -131,50 +135,75 @@ const Games = ({ token }) => {
     <span>en cours de chargement </span>
   ) : (
     <>
-      <button onClick={handlePagenext}>suivant</button>
+      <div className="choice">
+        {/* choice c'est rectangle rouge */}
 
-      <button onClick={handlePageprevious}>precedent</button>
+        {/* navuser c'est rectangle vert, précédent, input, suivant */}
 
-      <select onClick={handleSelect} onChange={onChange}>
-        <option>- Please select a platform -</option>
-        {platform &&
-          platform.results.map((platformeelem, index) => {
-            return <option key={index}>{platformeelem.name}</option>;
-          })}
-      </select>
+        {data.previous != null ? (
+          <div className="navusersecondpage">
+            <button className="previous" onClick={handlePageprevious}>
+              <FontAwesomeIcon icon={faAngleLeft} size="2x" />
+            </button>
 
-      <select onClick={handleGenre} onChange={onChangegenre}>
-        <option>- Please select a genre -</option>
-        {genre &&
-          genre.results.map((elemgenre, index) => {
-            return <option key={index}>{elemgenre.slug}</option>;
-          })}
-      </select>
+            <input className="inputgame" onChange={handleChange} />
 
-      <input onChange={handleChange} />
-      <select onChange={handleOrdering}>
-        <option>- Please select ordering</option>
-        <option>released</option>
-        <option>rating</option>
-        <option>name</option>
-      </select>
+            <button className="next" onClick={handlePagenext}>
+              <FontAwesomeIcon icon={faAngleRight} size="2x" />
+            </button>
+          </div>
+        ) : (
+          <div className="navuserfirstpage">
+            <input className="inputgame" onChange={handleChange} />
+
+            <button className="next" onClick={handlePagenext}>
+              <FontAwesomeIcon icon={faAngleRight} size="2x" />
+            </button>
+          </div>
+        )}
+
+        <div className="select">
+          <select onClick={handleSelect} onChange={onChange}>
+            <option>- Please select a platform -</option>
+            {platform &&
+              platform.results.map((platformeelem, index) => {
+                return <option key={index}>{platformeelem.name}</option>;
+              })}
+          </select>
+
+          <select onClick={handleGenre} onChange={onChangegenre}>
+            <option>- Please select a genre -</option>
+            {genre &&
+              genre.results.map((elemgenre, index) => {
+                return <option key={index}>{elemgenre.slug}</option>;
+              })}
+          </select>
+
+          <select onChange={handleOrdering}>
+            <option>- Please select ordering</option>
+            <option>released</option>
+            <option>rating</option>
+            <option>name</option>
+          </select>
+        </div>
+      </div>
 
       <div className="global">
         {data.results.map((elem, index) => {
           return (
             <div className="game">
+              <span className="title">{elem.name}</span>
+
               <Link to={`/games/${elem.id}`}>
                 <img className="pics" src={elem.background_image} />
               </Link>
-              <div>
-                <span>{elem.name}</span>
-              </div>
               <button
+                className="favori"
                 onClick={() =>
                   handleFavori(elem.background_image, elem.name, token)
                 }
               >
-                FAVORI
+                <FontAwesomeIcon icon={faHeart} size="1x" />
               </button>
             </div>
           );

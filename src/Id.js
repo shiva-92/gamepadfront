@@ -57,35 +57,47 @@ const Id = ({ token }) => {
     <span>En cours de chargement... </span>
   ) : (
     <>
-      <div>
-        <div>{data.name}</div>
-        <img src={data.background_image} className="gamedetailpic" />
-        <div>
-          {data.platforms.map((elem, index) => {
-            return <span>{elem.platform.name}</span>;
-          })}
-          <div>
-            <span>{data.released}</span>
-          </div>
-          <span>{data.developers[0].name}</span>
+      <div className="gamedetail">
+        <div className="visualdetail">
+          <div>{data.name}</div>
+          <img src={data.background_image} className="gamedetailpic" />
         </div>
-        {data.genres.map((elemgenre, index) => {
-          return <span>{elemgenre.name}</span>;
-        })}
-        <div>{data.publishers[0].name}</div>
+
+        <div className="textdetail">
+          <div className="plateformes">
+            <div>PLATFORMS</div>
+            {data.platforms.map((elem, index) => {
+              return <div>{elem.platform.name}</div>;
+            })}
+          </div>
+
+          <span>{`Date de sortie : ` + `${data.released}`}</span>
+          <span>{`Développeurs : ` + `${data.developers[0].name}`}</span>
+
+          <div className="genre">
+            <div>GENRES</div>
+            {data.genres.map((elemgenre, index) => {
+              return <span>{`${elemgenre.name}` + ` `}</span>;
+            })}
+          </div>
+
+          <button className="buttonreview" onClick={handlereview}>
+            DONNE TON AVIS SUR CE JEU
+          </button>
+        </div>
       </div>
 
-      <button onClick={handlereview}>write review</button>
-
-      {games &&
-        games.results.map((elem, index) => {
-          return (
-            <>
-              <div>{elem.name}</div>
-              <img src={elem.background_image} />
-            </>
-          );
-        })}
+      <div className="globalrelatedgames">
+        {games &&
+          games.results.map((elem, index) => {
+            return (
+              <div className="relatedgame">
+                <div>{elem.name}</div>
+                <img className="relatedgamepic" src={elem.background_image} />
+              </div>
+            );
+          })}
+      </div>
 
       {reviews &&
         reviews.map((elem, index) => {

@@ -27,14 +27,17 @@ const Collection = ({ token }) => {
     <span>En cours de chargement... </span>
   ) : (
     <>
-      {data.map((elem, index) => {
-        return (
-          <>
-            <img src={elem.visuelgame} />
-            <span>{elem.name}</span>
-          </>
-        );
-      })}
+      <div className="global">
+        {data.map((elem, index) => {
+          return (
+            <div className="game">
+              <span>{elem.name}</span>
+
+              <img className="pics" src={elem.visuelgame} />
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

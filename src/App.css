@@ -4,6 +4,19 @@
   font-weight: bold;
 }
 
+.global {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 1500px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
 .pics {
   width: 200px;
   height: 250px;
@@ -15,17 +28,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
-}
-
-.global {
-  display: flex;
-  flex-wrap: wrap;
-  height: 1000px;
-  justify-content: space-around;
-  /* background-color: yellow; */
-  width: 1500px;
-  margin: 0 auto;
+  position: relative;
 }
 
 .ok {
@@ -60,18 +65,45 @@
 .header {
   display: flex;
   justify-content: space-between;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 .partright {
-  width: 20%;
+  width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.gamedetailpic {
-  width: 500px;
-  height: 250px;
-  object-fit: cover;
+.choice {
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navuserfirstpage {
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
+}
+
+.navusersecondpage {
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .containerform {
@@ -86,4 +118,94 @@
 .widthinput {
   width: 800px;
   margin-bottom: 10px;
+}
+
+.previous {
+  color: red;
+  border: none;
+  background-color: transparent;
+}
+
+.next {
+  color: red;
+  border: none;
+  background-color: transparent;
+}
+
+.favori {
+  position: absolute;
+  margin-bottom: 190px;
+  margin-left: 145px;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  background-color: black;
+  width: 30px;
+  height: 30px;
+}
+
+:hover.favori {
+  color: red;
+  cursor: pointer;
+}
+
+.landingpage {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.gamedetail {
+  background-color: red;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  height: 320px;
+}
+
+.gamedetailpic {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+}
+.textdetail {
+  background-color: green;
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.visualdetail {
+  background-color: purple;
+}
+
+.plateformes {
+  margin-bottom: 10px;
+  width: 40%;
+}
+
+.genre {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.buttonreview {
+  width: 300px;
+  text-align: center;
+}
+
+.globalrelatedgames {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.relatedgamepic {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
 }
