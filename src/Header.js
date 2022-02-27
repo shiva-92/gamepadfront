@@ -33,7 +33,7 @@ const Header = ({ token, setUser }) => {
           <img src={logogamepad} onClick={handleimage} />
         </button>
         <div class="partright">
-          <button onClick={handleCollection}>MYCOLLECTION</button>
+          <button onClick={handleCollection}>MES FAVORIS</button>
 
           {token ? (
             <>
@@ -42,7 +42,7 @@ const Header = ({ token, setUser }) => {
             </>
           ) : (
             <>
-              <Link to="/signup">SIGNUP</Link>
+              <Link to="/signup">SIGN UP</Link>
               <Link to="/login">LOGIN</Link>
             </>
           )}

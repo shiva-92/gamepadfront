@@ -31,17 +31,21 @@ const Signup = ({ setUser }) => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    if (password != passwordconfirm) {
+      alert("le mot de passe diffère");
+    } else {
+      event.preventDefault();
 
-    const response = await axios.post("http://localhost:3000/create", {
-      email: mail,
-      password: password,
-      username: username,
-    });
-    console.log(response.data.token);
-    setUser(response.data.token);
+      const response = await axios.post("http://localhost:3000/create", {
+        email: mail,
+        password: password,
+        username: username,
+      });
+      console.log(response.data.token);
+      setUser(response.data.token);
 
-    navigate("/");
+      navigate("/");
+    }
   };
 
   return (

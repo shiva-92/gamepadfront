@@ -164,7 +164,7 @@ const Games = ({ token }) => {
 
         <div className="select">
           <select onClick={handleSelect} onChange={onChange}>
-            <option>- Please select a platform -</option>
+            <option>- Choisissez une plateforme -</option>
             {platform &&
               platform.results.map((platformeelem, index) => {
                 return <option key={index}>{platformeelem.name}</option>;
@@ -172,7 +172,7 @@ const Games = ({ token }) => {
           </select>
 
           <select onClick={handleGenre} onChange={onChangegenre}>
-            <option>- Please select a genre -</option>
+            <option>- Choisissez un genre -</option>
             {genre &&
               genre.results.map((elemgenre, index) => {
                 return <option key={index}>{elemgenre.slug}</option>;
@@ -180,7 +180,7 @@ const Games = ({ token }) => {
           </select>
 
           <select onChange={handleOrdering}>
-            <option>- Please select ordering</option>
+            <option>- Ordre d'affichage</option>
             <option>released</option>
             <option>rating</option>
             <option>name</option>
@@ -199,9 +199,15 @@ const Games = ({ token }) => {
               </Link>
               <button
                 className="favori"
-                onClick={() =>
-                  handleFavori(elem.background_image, elem.name, token)
-                }
+                onClick={() => {
+                  if (!token) {
+                    alert(
+                      "Vous devez être connecté pour ajouter ce jeu à vos favoris"
+                    );
+                  } else {
+                    handleFavori(elem.background_image, elem.name, token);
+                  }
+                }}
               >
                 <FontAwesomeIcon icon={faHeart} size="1x" />
               </button>

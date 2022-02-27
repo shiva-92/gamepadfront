@@ -50,6 +50,8 @@ const Id = ({ token }) => {
   const handlereview = () => {
     if (token) {
       navigate(`/review/${id}`);
+    } else {
+      alert("vous devez être connecté pour laisser un avis sur le jeu");
     }
   };
 
