@@ -65,7 +65,7 @@ const Id = ({ token }) => {
 
         <div className="textdetail">
           <div className="plateformes">
-            <div>PLATFORMS</div>
+            <div>PLATFORMES</div>
             {data.platforms.map((elem, index) => {
               return <div>{elem.platform.name}</div>;
             })}
@@ -87,26 +87,35 @@ const Id = ({ token }) => {
         </div>
       </div>
 
-      <div className="globalrelatedgames">
-        {games &&
-          games.results.map((elem, index) => {
-            return (
-              <div className="relatedgame">
-                <div>{elem.name}</div>
-                <img className="relatedgamepic" src={elem.background_image} />
-              </div>
-            );
-          })}
+      <div className="gameserie">
+        <div className="sectionrelatedgames">JEUX LIES</div>
+        <div className="globalrelatedgames">
+          {games &&
+            games.results.map((elem, index) => {
+              return (
+                <div className="relatedgame">
+                  <div className="relatedtitle">{elem.name}</div>
+                  <img className="relatedgamepic" src={elem.background_image} />
+                </div>
+              );
+            })}
+        </div>
       </div>
 
-      {reviews &&
-        reviews.map((elem, index) => {
-          return (
-            <>
-              <div>{elem.titrereview}</div>
-            </>
-          );
-        })}
+      <div className="globalreviews">
+        <div className="sectionreviews">AVIS SUR CE JEU</div>
+        <div className="globalreview">
+          {reviews &&
+            //tu mape le tableau reviews
+            reviews.map((elem, index) => {
+              return (
+                <>
+                  <div className="review">{elem.textereview}</div>
+                </>
+              );
+            })}
+        </div>
+      </div>
     </>
   );
 };
