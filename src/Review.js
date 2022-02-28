@@ -21,7 +21,6 @@ const Review = ({ token }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //pour le transferer, tu utilises execution d'une fonction
     const response = await axios.post(
       `${process.env.REACT_APP_HOST}/reviewpost`,
       {

@@ -119,10 +119,6 @@ const Games = ({ token }) => {
   ) : (
     <>
       <div className="choice">
-        {/* choice c'est rectangle rouge */}
-
-        {/* navuser c'est rectangle vert, précédent, input, suivant */}
-
         {data.previous != null ? (
           <div className="navusersecondpage">
             <button className="previous" onClick={handlePageprevious}>
