@@ -49,31 +49,16 @@ const Games = ({ token }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let endpoint =
-        "https://api.rawg.io/api/games?key=1804fba238364ea59c70ba67e4ba4d18";
-
-      if (game) {
-        endpoint = endpoint + `&` + `search=` + game;
-      }
-
-      if (choix) {
-        endpoint = endpoint + `&` + `ordering=` + choix;
-      }
+      let endpoint = `${process.env.REACT_APP_HOST}/games?game=${game}&choix=${choix}&gametype=${gametype}&check=${check}`;
 
       if (idgame) {
-        endpoint = endpoint + `&` + `platforms=` + idgame;
+        endpoint = endpoint + `&` + `idgame=` + idgame;
       }
 
-      if (gametype) {
-        endpoint = endpoint + `&` + `genres=` + gametype;
-      }
-
-      if (check) {
-        endpoint = endpoint + `&` + `page=` + check;
-      }
       const response = await axios.get(endpoint);
 
       setData(response.data);
+      console.log(response.data);
       setIsLoading(false);
     };
     fetchData();
