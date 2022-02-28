@@ -12,7 +12,7 @@ const Collection = ({ token }) => {
       console.log(token);
 
       const response = await axios.post(
-        `http://localhost:3000/recuperefavori`,
+        `${process.env.REACT_APP_HOST}/recuperefavori`,
         {
           tokencheck: token,
         }

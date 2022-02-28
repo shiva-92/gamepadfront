@@ -26,7 +26,7 @@ const Games = ({ token }) => {
   const handleSelect = () => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://api.rawg.io/api/platforms?key=1804fba238364ea59c70ba67e4ba4d18`
+        `${process.env.REACT_APP_HOST}/platforms`
       );
       setPlatform(response.data);
 
@@ -37,9 +37,7 @@ const Games = ({ token }) => {
 
   const handleGenre = () => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `https://api.rawg.io/api/genres?key=1804fba238364ea59c70ba67e4ba4d18`
-      );
+      const response = await axios.get(`${process.env.REACT_APP_HOST}/genres`);
       setGenre(response.data);
 
       setIsLoading(false);
@@ -108,7 +106,7 @@ const Games = ({ token }) => {
     console.log(photogame);
     console.log(nom);
     console.log(tok);
-    const response = await axios.post("http://localhost:3000/favori", {
+    const response = await axios.post(`${process.env.REACT_APP_HOST}/favori`, {
       nomphoto: photogame,
       nomgame: nom,
       valeurtoken: tok,

@@ -17,7 +17,7 @@ const Id = ({ token }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://api.rawg.io/api/games/${id}?key=1804fba238364ea59c70ba67e4ba4d18`
+        `${process.env.REACT_APP_HOST}/keygame?id=${id}`
       );
       setData(response.data);
       console.log(response.data);
@@ -27,7 +27,7 @@ const Id = ({ token }) => {
 
     const fetchDataone = async () => {
       const response = await axios.get(
-        `https://api.rawg.io/api/games/${id}/game-series?key=1804fba238364ea59c70ba67e4ba4d18`
+        `${process.env.REACT_APP_HOST}/gameseries?id=${id}`
       );
       setGames(response.data);
       console.log(response.data);
@@ -36,7 +36,7 @@ const Id = ({ token }) => {
 
     const fetchDatatwo = async () => {
       const response = await axios.post(
-        `http://localhost:3000/recuperecommentaire`,
+        `${process.env.REACT_APP_HOST}/recuperecommentaire`,
         {
           testid: id,
         }

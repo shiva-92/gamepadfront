@@ -22,12 +22,15 @@ const Review = ({ token }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     //pour le transferer, tu utilises execution d'une fonction
-    const response = await axios.post("http://localhost:3000/reviewpost", {
-      reviewtitle: title,
-      reviewtext: text,
-      tokentest: token,
-      idnum: id,
-    });
+    const response = await axios.post(
+      `${process.env.REACT_APP_HOST}/reviewpost`,
+      {
+        reviewtitle: title,
+        reviewtext: text,
+        tokentest: token,
+        idnum: id,
+      }
+    );
     console.log(response.data);
     navigate("/");
   };
