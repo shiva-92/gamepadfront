@@ -8,7 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 1500px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -33,7 +33,7 @@
   position: relative;
 }
 
-.ok {
+.formcontainer {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -56,7 +56,7 @@
   margin-bottom: 20px;
 }
 
-.ok > input {
+.formcontainer > input {
   border: black solid 1px;
   height: 35px;
   margin-bottom: 20px;
@@ -68,6 +68,7 @@
   margin-right: 50px;
   margin-left: 50px;
   margin-bottom: 20px;
+  background-color: black;
 }
 .partright {
   width: 40%;
@@ -79,7 +80,7 @@
 .choice {
   margin-right: 50px;
   margin-left: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   height: 70px;
   display: flex;
   flex-direction: column;
@@ -89,14 +90,16 @@
 
 .navuserfirstpage {
   display: flex;
-  width: 20%;
+  width: 25%;
   justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 .navusersecondpage {
   display: flex;
   width: 30%;
   justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 .select {
@@ -106,13 +109,17 @@
   margin: 0 auto;
 }
 
+.titlesignup {
+  text-align: center;
+}
 .containerform {
   /* background-color: red; */
   display: flex;
-  justify-content: center;
-  height: 400px;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 120px;
   align-items: center;
-  margin-top: 300px;
+  margin-bottom: 300px;
 }
 
 .widthinput {
@@ -248,4 +255,252 @@
 
 .review {
   margin-bottom: 10px;
+}
+
+.loginok {
+  color: red;
+}
+
+.signup {
+  color: white;
+  text-decoration: none;
+}
+
+.login {
+  color: white;
+  text-decoration: none;
+}
+
+.favorites {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.containerformreview {
+  margin-top: 100px;
+  margin-left: 300px;
+}
+@media (max-width: 728px) {
+  .global {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1000px;
+    margin-bottom: 50px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pics {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .game {
+    width: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .favori {
+    position: absolute;
+    margin-bottom: 280px;
+    margin-left: 290px;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+  }
+
+  :hover.favori {
+    color: red;
+    cursor: pointer;
+  }
+
+  .navuserfirstpage {
+    display: flex;
+    width: 45%;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+
+  .navusersecondpage {
+    display: flex;
+    width: 45%;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .titlesignup {
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .formcontainer > input {
+    border: black solid 1px;
+    height: 35px;
+    margin-bottom: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    margin-bottom: 50px;
+    background-color: black;
+  }
+  .partright {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+  }
+
+  .loginok {
+    color: red;
+  }
+
+  .signup {
+    color: white;
+    text-decoration: none;
+  }
+
+  .login {
+    color: white;
+    text-decoration: none;
+  }
+
+  .favorites {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .choice {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .gameserie {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .sectionrelatedgames {
+    margin-bottom: 20px;
+    font-size: x-large;
+  }
+
+  .globalrelatedgames {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .relatedgame {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .relatedtitle {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    color: white;
+    background-color: black;
+  }
+
+  .relatedgamepic {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .globalreviews {
+    width: 900px;
+    margin-left: 30px;
+  }
+
+  .sectionreviews {
+    font-size: x-large;
+  }
+
+  .globalreview {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+
+  .review {
+    margin-bottom: 10px;
+  }
+
+  .titlesignup {
+    margin-left: 310px;
+    margin-bottom: -90px;
+    font-size: x-large;
+  }
+  .formcontainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 295px;
+    margin-top: 100px;
+    height: 300px;
+  }
+
+  .formcontainer > input {
+    border: black solid 1px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .formcontainer > button {
+    border: black solid 1px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .containerformreview {
+    margin-top: 100px;
+    margin-left: 80px;
+  }
 }

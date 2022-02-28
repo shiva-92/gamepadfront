@@ -53,7 +53,7 @@ const Signup = ({ setUser }) => {
       <div className="container">
         <div className="titlesignup">SIGN UP</div>
 
-        <form onSubmit={handleSubmit} className="ok">
+        <form onSubmit={handleSubmit} className="formcontainer">
           <input onChange={handleUsername} placeholder="Username" type="text" />
           <input onChange={handleEmail} placeholder="email" type="text" />
           <input onChange={handlePassword} placeholder="password" type="text" />

@@ -34,7 +34,7 @@ const Login = ({ setUser }) => {
       <div className="container">
         <div className="titlesignup">LOGIN</div>
 
-        <form onSubmit={handleSubmit} className="ok">
+        <form onSubmit={handleSubmit} className="formcontainer">
           <input onChange={handleEmail} placeholder="email" type="text" />
           <input onChange={handlePassword} placeholder="password" type="text" />
 

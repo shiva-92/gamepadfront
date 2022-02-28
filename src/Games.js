@@ -146,7 +146,11 @@ const Games = ({ token }) => {
               <FontAwesomeIcon icon={faAngleLeft} size="2x" />
             </button>
 
-            <input className="inputgame" onChange={handleChange} />
+            <input
+              className="inputgame"
+              onChange={handleChange}
+              placeholder="Cherchez votre jeu favori !"
+            />
 
             <button className="next" onClick={handlePagenext}>
               <FontAwesomeIcon icon={faAngleRight} size="2x" />
@@ -154,7 +158,11 @@ const Games = ({ token }) => {
           </div>
         ) : (
           <div className="navuserfirstpage">
-            <input className="inputgame" onChange={handleChange} />
+            <input
+              className="inputgame"
+              onChange={handleChange}
+              placeholder="Cherchez votre jeu favori !"
+            />
 
             <button className="next" onClick={handlePagenext}>
               <FontAwesomeIcon icon={faAngleRight} size="2x" />

@@ -34,7 +34,7 @@ const Review = ({ token }) => {
 
   return (
     <>
-      <div className="containerform">
+      <div className="containerformreview">
         <form onSubmit={handleSubmit}>
           <div>Title review</div>
           <input
