@@ -21,15 +21,12 @@ const Review = ({ token }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post(
-      `${process.env.REACT_APP_HOST}/reviewpost`,
-      {
-        reviewtitle: title,
-        reviewtext: text,
-        tokentest: token,
-        idnum: id,
-      }
-    );
+    const response = await axios.post(`${backendHost}/reviewpost`, {
+      reviewtitle: title,
+      reviewtext: text,
+      tokentest: token,
+      idnum: id,
+    });
     console.log(response.data);
     navigate("/");
   };

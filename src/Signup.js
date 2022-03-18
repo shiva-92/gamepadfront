@@ -36,14 +36,11 @@ const Signup = ({ setUser }) => {
     } else {
       event.preventDefault();
 
-      const response = await axios.post(
-        `${process.env.REACT_APP_HOST}/create`,
-        {
-          email: mail,
-          password: password,
-          username: username,
-        }
-      );
+      const response = await axios.post(`${backendHost}/create`, {
+        email: mail,
+        password: password,
+        username: username,
+      });
       console.log(response.data.token);
       setUser(response.data.token);
 

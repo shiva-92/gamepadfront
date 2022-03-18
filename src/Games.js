@@ -25,9 +25,7 @@ const Games = ({ token }) => {
 
   const handleSelect = () => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `${process.env.REACT_APP_HOST}/platforms`
-      );
+      const response = await axios.get(`${backendHost}/platforms`);
       setPlatform(response.data);
 
       setIsLoading(false);
@@ -37,7 +35,7 @@ const Games = ({ token }) => {
 
   const handleGenre = () => {
     const fetchData = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_HOST}/genres`);
+      const response = await axios.get(`${backendHost}/genres`);
       setGenre(response.data);
 
       setIsLoading(false);
@@ -47,7 +45,7 @@ const Games = ({ token }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let endpoint = `${process.env.REACT_APP_HOST}/games?game=${game}&choix=${choix}&gametype=${gametype}&check=${check}`;
+      let endpoint = `${backendHost}/games?game=${game}&choix=${choix}&gametype=${gametype}&check=${check}`;
 
       if (idgame) {
         endpoint = endpoint + `&` + `idgame=` + idgame;
@@ -106,7 +104,7 @@ const Games = ({ token }) => {
     console.log(photogame);
     console.log(nom);
     console.log(tok);
-    const response = await axios.post(`${process.env.REACT_APP_HOST}/favori`, {
+    const response = await axios.post(`${backendHost}/favori`, {
       nomphoto: photogame,
       nomgame: nom,
       valeurtoken: tok,

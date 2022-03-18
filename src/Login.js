@@ -20,7 +20,7 @@ const Login = ({ setUser }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await axios.post(`${process.env.REACT_APP_HOST}/sign`, {
+    const response = await axios.post(`${backendHost}/sign`, {
       email: mail,
       password: password,
     });

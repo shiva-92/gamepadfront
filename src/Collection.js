@@ -11,12 +11,9 @@ const Collection = ({ token }) => {
     const fetchData = async () => {
       console.log(token);
 
-      const response = await axios.post(
-        `${process.env.REACT_APP_HOST}/recuperefavori`,
-        {
-          tokencheck: token,
-        }
-      );
+      const response = await axios.post(`${backendHost}/recuperefavori`, {
+        tokencheck: token,
+      });
 
       setData(response.data);
       setIsLoading(false);

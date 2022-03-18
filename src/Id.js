@@ -16,9 +16,7 @@ const Id = ({ token }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `${process.env.REACT_APP_HOST}/keygame?id=${id}`
-      );
+      const response = await axios.get(`${backendHost}/keygame?id=${id}`);
       setData(response.data);
       console.log(response.data);
       setIsLoading(false);
@@ -26,21 +24,16 @@ const Id = ({ token }) => {
     fetchData();
 
     const fetchDataone = async () => {
-      const response = await axios.get(
-        `${process.env.REACT_APP_HOST}/gameseries?id=${id}`
-      );
+      const response = await axios.get(`${backendHost}/gameseries?id=${id}`);
       setGames(response.data);
       console.log(response.data);
     };
     fetchDataone();
 
     const fetchDatatwo = async () => {
-      const response = await axios.post(
-        `${process.env.REACT_APP_HOST}/recuperecommentaire`,
-        {
-          testid: id,
-        }
-      );
+      const response = await axios.post(`${backendHost}/recuperecommentaire`, {
+        testid: id,
+      });
       console.log(response.data);
       setReviews(response.data);
     };

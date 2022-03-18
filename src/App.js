@@ -9,6 +9,7 @@ import Review from "./Review";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 import React, { useState, useEffect } from "react";
+import { backendHost } from "./constants.js";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
